@@ -1,0 +1,50 @@
+{
+  "name": "materna",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev:renderer": "vite --config ./vite.renderer.config.ts",
+    "preview:renderer": "vite preview --config ./vite.renderer.config.ts",
+    "lint": "eslint renderer/src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "fix": "eslint renderer/src --fix",
+    "lint:style": "stylelint renderer/src/**/*.{tsx,jsx,css} --cache --fix",
+    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md,tsx,jsx}\"",
+    "commitlint": "commitlint --config commitlint.config.cjs -e -V",
+    "build:renderer": "tsc && cross-env NODE_ENV=production vite build --config ./vite.renderer.config.ts"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "husky": "^8.0.0",
+    "only-allow": "^1.1.1",
+    "postcss": "^8.4.29",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}
