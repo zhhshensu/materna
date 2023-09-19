@@ -5,12 +5,12 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  root: path.join(__dirname, 'src', 'renderer'),
+  root: path.join(__dirname, 'src', 'app'),
   plugins: [react()],
   build: {
     rollupOptions: {
       input: {
-        renderer: path.join(__dirname, 'src', 'renderer', 'index.html'),
+        renderer: path.join(__dirname, 'src', 'app', 'index.html'),
       },
     },
     outDir: path.join(__dirname, 'build'),

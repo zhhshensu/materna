@@ -23,7 +23,10 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src"
+    "src/app"
+  ],
+  "exclude": [
+    "src/electron"
   ],
   "references": [
     {
