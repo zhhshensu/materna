@@ -19,6 +19,7 @@
 - 框架：Nestjs
 - 数据库：pg、lowdb
 - orm工具：prisma
+- 打包工具: tsup + nestjs
 
 ### 客户端
 

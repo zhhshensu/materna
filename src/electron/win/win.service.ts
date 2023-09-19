@@ -27,7 +27,7 @@ export class WinService implements OnModuleInit {
       electronApp.commandLine.appendSwitch('disable-gpu-rasterization')
       electronApp.commandLine.appendSwitch('disable-gpu-sandbox')
       electronApp.commandLine.appendSwitch('--no-sandbox')
-
+      console.log('first')
       electronApp.disableDomainBlockingFor3DAPIs() // 关闭3D api, 提高兼容性
       electronApp.disableHardwareAcceleration() // 关闭硬件加速, 减少渲染问题
 
@@ -82,7 +82,7 @@ export class WinService implements OnModuleInit {
     this.mainWindow.show()
     this.mainWindow.maximize()
     if (isProd()) {
-      const LoginFile = path.resolve(__dirname, '../index.html')
+      const LoginFile = path.resolve(__dirname, '../../app/index.html')
       await this.mainWindow.loadFile(LoginFile)
     } else {
       await this.mainWindow.loadURL('http://127.0.0.1:5173/')

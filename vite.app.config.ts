@@ -13,7 +13,7 @@ export default defineConfig({
         renderer: path.join(__dirname, 'src', 'app', 'index.html'),
       },
     },
-    outDir: path.join(__dirname, 'build'),
+    outDir: path.join(__dirname, 'dist/app'),
     minify: true,
     ssr: false,
     emptyOutDir: false,
