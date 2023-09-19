@@ -12,10 +12,6 @@ import * as path from 'path'
 export class WinService implements OnModuleInit {
   public mainWindow: BrowserWindow
   onModuleInit() {
-    console.log(
-      '🚀 ~ file: electron.service.ts:15 ~ ElectronService ~ onModuleInit ~ electronApp:',
-      electronApp,
-    )
     if (electronApp) {
       //https://github.com/electron/electron/issues/30966
       //GPU process crashes when electron is in a folder with unicode characters
@@ -27,7 +23,6 @@ export class WinService implements OnModuleInit {
       electronApp.commandLine.appendSwitch('disable-gpu-rasterization')
       electronApp.commandLine.appendSwitch('disable-gpu-sandbox')
       electronApp.commandLine.appendSwitch('--no-sandbox')
-      console.log('first')
       electronApp.disableDomainBlockingFor3DAPIs() // 关闭3D api, 提高兼容性
       electronApp.disableHardwareAcceleration() // 关闭硬件加速, 减少渲染问题
 

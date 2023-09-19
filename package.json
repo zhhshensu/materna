@@ -17,8 +17,8 @@
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md,tsx,jsx}\"",
     "commitlint": "commitlint --config commitlint.config.cjs -e -V",
     "start:electron": "npm run dev:electron",
-    "dev:electron": "cross-env NODE_ENV=development tsup --config tsup.config.ts --watch --onSuccess 'npx electron ./build/main.js'",
-    "dev:electron:run": "electron ./build/main.js",
+    "dev:electron": "cross-env NODE_ENV=development tsup --config tsup.config.ts --watch --onSuccess 'npx electron ./dist/electron/main.js'",
+    "dev:electron:run": "electron ./dist/electron/main.js",
     "build:electron": "nest build -p src/electron/tsconfig.build.json -c src/electron/nest-cli.json"
   },
   "dependencies": {
