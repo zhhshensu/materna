@@ -6,6 +6,7 @@ import path from 'path'
 export default defineConfig({
   base: './',
   root: path.join(__dirname, 'src', 'app'),
+  publicDir: path.join(__dirname, 'src/app/assets'),
   plugins: [react()],
   build: {
     rollupOptions: {

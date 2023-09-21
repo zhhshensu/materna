@@ -15,7 +15,6 @@ export class WinService implements OnModuleInit {
     if (electronApp) {
       //https://github.com/electron/electron/issues/30966
       //GPU process crashes when electron is in a folder with unicode characters
-      //需要测试2023年08月31日14:15:40
       electronApp.commandLine.appendSwitch('no-sandbox')
       electronApp.commandLine.appendSwitch('disable-gpu')
       electronApp.commandLine.appendSwitch('disable-software-rasterizer')
