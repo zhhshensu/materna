@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import React, { useContext } from 'react'
 import AppMenuitem from './AppMenuitem'
 import { LayoutContext } from './context/layoutcontext'
@@ -12,16 +10,16 @@ const AppMenu = () => {
 
   const model: AppMenuItem[] = [
     {
-      label: 'Home',
+      label: '我的应用',
       items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }],
     },
     {
-      label: 'UI Components',
+      label: '我的应用',
       items: [
         {
-          label: 'Form Layout',
+          label: 'Find github use',
           icon: 'pi pi-fw pi-id-card',
-          to: '/uikit/formlayout',
+          to: '/find-git-user',
         },
         {
           label: 'Input',

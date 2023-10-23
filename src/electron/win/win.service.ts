@@ -79,7 +79,7 @@ export class WinService implements OnModuleInit {
       const LoginFile = path.resolve(__dirname, '../../app/index.html')
       await this.mainWindow.loadFile(LoginFile)
     } else {
-      await this.mainWindow.loadURL('http://127.0.0.1:5173/')
+      await this.mainWindow.loadURL('http://127.0.0.1:5173')
     }
     this.mainWindow.webContents.once('dom-ready', () => {})
   }

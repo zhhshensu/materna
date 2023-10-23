@@ -9,6 +9,11 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: [
+      './tsconfig.eslint.json',
+      './src/*/tsconfig.json',
+    ],
+    tsconfigRootDir: __dirname,
     ecmaFeatures: {
       jsx: true,
     },

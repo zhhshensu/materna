@@ -1,8 +1,9 @@
 import React, { Children, lazy, ReactElement, useMemo } from 'react'
 import { Navigate, useRoutes, RouteProps, Link, Outlet } from 'react-router-dom'
-import Layout from '../layout/layout'
+import Layout from '../layouts/layout'
 import Login from '../pages/Login'
 import NotFound from '../pages/NotFound'
+import FindGitUser from '../pages/Modules/find-git-user'
 
 export const routeList: any[] = [
   {
@@ -12,7 +13,12 @@ export const routeList: any[] = [
         <Outlet></Outlet>
       </Layout>
     ),
-    children: [],
+    children: [
+      {
+        path: '/find-git-user',
+        element: <FindGitUser></FindGitUser>,
+      },
+    ],
   },
   {
     path: '/login',

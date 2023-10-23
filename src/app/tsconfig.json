@@ -22,16 +22,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": [
-        "./*"
+      "@": [
+        "./src/app"
       ],
     }
   },
-  "include": [
-    "src/app"
-  ],
   "exclude": [
-    "src/electron"
+    "src/electron/**/*"
   ],
   "references": [
     {

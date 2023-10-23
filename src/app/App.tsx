@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { PrimeReactProvider } from 'primereact/api'
-import { LayoutProvider } from './layout/context/layoutcontext'
+import { LayoutProvider } from './layouts/context/layoutcontext'
 import { MainRouter } from './router'
 
 import 'primereact/resources/themes/lara-light-indigo/theme.css' //theme

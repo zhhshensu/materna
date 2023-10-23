@@ -8,6 +8,9 @@ export default defineConfig({
   root: path.join(__dirname, 'src', 'app'),
   publicDir: path.join(__dirname, 'src/app/assets'),
   plugins: [react()],
+  resolve: {
+    alias: [{ find: '@', replacement: path.join(__dirname, 'src/app') }],
+  },
   build: {
     rollupOptions: {
       input: {
