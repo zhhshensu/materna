@@ -3,7 +3,7 @@ import { Navigate, useRoutes, RouteProps, Link, Outlet } from 'react-router-dom'
 import Layout from '../layouts/layout'
 import Login from '../pages/Login'
 import NotFound from '../pages/NotFound'
-import FindGitUser from '../pages/Modules/find-git-user'
+import FindGitUser from '../pages/modules/find-git-user'
 
 export const routeList: any[] = [
   {

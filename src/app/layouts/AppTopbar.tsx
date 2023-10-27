@@ -24,13 +24,6 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
     topbarmenubutton: topbarmenubuttonRef.current,
   }))
 
-  const items = [
-    {
-      label: 'Quit',
-      icon: 'pi pi-fw pi-power-off',
-    },
-  ]
-
   return (
     <div className="layout-topbar">
       {/* <NavLink to="/" className="layout-topbar-logo">
@@ -44,9 +37,6 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
         />
         <span>SAKAI</span>
       </NavLink> */}
-      <div>
-        <Menubar model={items} />
-      </div>
       <div>
         <button
           ref={menubuttonRef}
