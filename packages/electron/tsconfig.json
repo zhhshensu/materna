@@ -6,9 +6,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2021",
     "sourceMap": true,
-    "outDir": "../../dist/electron",
+    "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
@@ -21,12 +21,15 @@
     "esModuleInterop": true,
     "allowJs": true,
     "paths": {
+      "@/*": [
+        "./src/*"
+      ],
       "common/*": [
-        "./common/*"
+        "./src/common/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
       ]
     }
-  },
-  "include": [
-    "."
-  ]
+  }
 }

@@ -5,19 +5,17 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  root: path.join(__dirname, 'src', 'app'),
-  publicDir: path.join(__dirname, 'src/app/assets'),
   plugins: [react()],
   resolve: {
-    alias: [{ find: '@', replacement: path.join(__dirname, 'src/app') }],
+    alias: [{ find: '@', replacement: path.join(__dirname, './src') }],
   },
   build: {
     rollupOptions: {
       input: {
-        renderer: path.join(__dirname, 'src', 'app', 'index.html'),
+        // renderer: path.join(__dirname, 'src', 'app', 'index.html'),
       },
     },
-    outDir: path.join(__dirname, 'dist/app'),
+    // outDir: path.join(__dirname, 'dist/app'),
     minify: true,
     ssr: false,
     emptyOutDir: false,
