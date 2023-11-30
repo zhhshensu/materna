@@ -6,13 +6,15 @@ import React, {
   useRef,
 } from 'react'
 import { AppTopbarRef } from '../types/types'
-import { LayoutContext } from './context/layoutcontext'
 
-// import { NavLink } from 'react-router-dom'
+import { LayoutContext } from './context/layoutcontext'
+import whiteLogo from '@/assets/images/logo-white.png'
+import blackLogo from '@/assets/images/logo-black.png'
+
+import { NavLink, Link } from 'react-router-dom'
 
 const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
-  // const { layoutConfig, layoutState, onMenuToggle, showProfileSidebar } =
-  //   useContext(LayoutContext)
+  const { layoutConfig, onMenuToggle } = useContext(LayoutContext)
   // const menubuttonRef = useRef(null)
   // const topbarmenuRef = useRef(null)
   // const topbarmenubuttonRef = useRef(null)
@@ -22,51 +24,22 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
   //   topbarmenu: topbarmenuRef.current,
   //   topbarmenubutton: topbarmenubuttonRef.current,
   // }))
-
+  const logoUrl = layoutConfig?.colorScheme !== 'light' ? whiteLogo : blackLogo
   return (
     <div className="layout-topbar">
-      {/* <div>
-        <button
-          ref={menubuttonRef}
-          type="button"
-          className="p-link layout-menu-button layout-topbar-button"
-          onClick={onMenuToggle}
-        >
-          <i className="pi pi-bars" />
-        </button>
+      <Link to="/" className="layout-topbar-logo">
+        <img src={logoUrl} width="47.22px" height={'35px'} alt="logo" />
+        <span>MATERNA</span>
+      </Link>
 
-        <button
-          ref={topbarmenubuttonRef}
-          type="button"
-          className="p-link layout-topbar-menu-button layout-topbar-button"
-          onClick={showProfileSidebar}
-        >
-          <i className="pi pi-ellipsis-v" />
-        </button>
-
-        <div
-          ref={topbarmenuRef}
-          className={classNames('layout-topbar-menu', {
-            'layout-topbar-menu-mobile-active':
-              layoutState.profileSidebarVisible,
-          })}
-        >
-          <button type="button" className="p-link layout-topbar-button">
-            <i className="pi pi-calendar"></i>
-            <span>Calendar</span>
-          </button>
-          <button type="button" className="p-link layout-topbar-button">
-            <i className="pi pi-user"></i>
-            <span>Profile</span>
-          </button>
-          <a href="/documentation">
-            <button type="button" className="p-link layout-topbar-button">
-              <i className="pi pi-cog"></i>
-              <span>Settings</span>
-            </button>
-          </a>
-        </div>
-      </div> */}
+      {/* <button
+        ref={menubuttonRef}
+        type="button"
+        className="p-link layout-menu-button layout-topbar-button"
+        onClick={onMenuToggle}
+      >
+        <i className="pi pi-bars" />
+      </button> */}
     </div>
   )
 })

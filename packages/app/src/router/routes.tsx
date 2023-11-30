@@ -1,7 +1,8 @@
 import React, { Children, lazy, ReactElement, useMemo } from 'react'
 import { Navigate, useRoutes, RouteProps, Link, Outlet } from 'react-router-dom'
-import Layout from '../layouts/layout'
-import NotFound from '../pages/NotFound'
+import Layout from '@/layouts/layout'
+import NotFound from '@/pages/NotFound'
+import Home from '@/pages/home'
 
 export const routeList: any[] = [
   {
@@ -11,7 +12,12 @@ export const routeList: any[] = [
         <Outlet></Outlet>
       </Layout>
     ),
-    children: [],
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>,
+      },
+    ],
   },
   {
     path: '*',

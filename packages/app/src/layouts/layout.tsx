@@ -1,8 +1,3 @@
-// import {
-//   useEventListener,
-//   useMountEffect,
-//   useUnmountEffect,
-// } from 'primereact/hooks'
 import React, { useContext, useEffect, useRef } from 'react'
 import clsx from 'clsx'
 import AppFooter from './AppFooter'
@@ -12,6 +7,7 @@ import AppConfig from './AppConfig'
 import { LayoutContext } from './context/layoutcontext'
 import { ChildContainerProps, LayoutState, AppTopbarRef } from '../types/types'
 import { useParams, useLocation } from 'react-router-dom'
+import '@/styles/layout/layout.scss'
 
 const Layout = ({ children }: ChildContainerProps) => {
   const { layoutConfig, layoutState, setLayoutState } =
@@ -140,14 +136,12 @@ const Layout = ({ children }: ChildContainerProps) => {
   return (
     <React.Fragment>
       <div className={containerClass}>
+        <AppTopbar ref={topbarRef} />
         <div ref={sidebarRef} className="layout-sidebar">
-          {/* <AppSidebar /> */}
+          <AppSidebar />
         </div>
         <div className="layout-main-container">
-          <div className="layout-main">
-            <AppTopbar ref={topbarRef} />
-            {children}
-          </div>
+          <div className="layout-main">{children}</div>
           <AppFooter />
         </div>
         <AppConfig />

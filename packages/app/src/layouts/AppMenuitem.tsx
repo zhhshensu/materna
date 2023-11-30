@@ -1,9 +1,9 @@
-import classNames from 'clsx'
 import React, { useEffect, useContext } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { MenuContext } from './context/menucontext'
 import { AppMenuItemProps } from '../types/types'
 import { useParams, useLocation, NavLink } from 'react-router-dom'
+import clsx from 'clsx'
 
 const AppMenuitem = (props: AppMenuItemProps) => {
   const pathname = useLocation().pathname
@@ -41,8 +41,11 @@ const AppMenuitem = (props: AppMenuItemProps) => {
     }
 
     // toggle active state
-    if (item!.items) setActiveMenu(active ? (props.parentKey as string) : key)
-    else setActiveMenu(key)
+    if (item!.items) {
+      setActiveMenu(active ? (props.parentKey as string) : key)
+    } else {
+      setActiveMenu(key)
+    }
   }
 
   const subMenu = item!.items && item!.visible !== false && (
@@ -70,7 +73,7 @@ const AppMenuitem = (props: AppMenuItemProps) => {
 
   return (
     <li
-      className={classNames({
+      className={clsx({
         'layout-root-menuitem': props.root,
         'active-menuitem': active,
       })}
@@ -82,11 +85,11 @@ const AppMenuitem = (props: AppMenuItemProps) => {
         <a
           href={item!.url}
           onClick={(e) => itemClick(e)}
-          className={classNames(item!.class, 'p-ripple')}
+          className={clsx(item!.class, 'p-ripple')}
           target={item!.target}
           tabIndex={0}
         >
-          <i className={classNames('layout-menuitem-icon', item!.icon)}></i>
+          <i className={clsx('layout-menuitem-icon', item!.icon)}></i>
           <span className="layout-menuitem-text">{item!.label}</span>
           {item!.items && (
             <i className="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
@@ -100,12 +103,12 @@ const AppMenuitem = (props: AppMenuItemProps) => {
           replace={item!.replaceUrl}
           target={item!.target}
           onClick={(e) => itemClick(e)}
-          className={classNames(item!.class, 'p-ripple', {
+          className={clsx(item!.class, 'p-ripple', {
             'active-route': isActiveRoute,
           })}
           tabIndex={0}
         >
-          <i className={classNames('layout-menuitem-icon', item!.icon)}></i>
+          <i className={clsx('layout-menuitem-icon', item!.icon)}></i>
           <span className="layout-menuitem-text">{item!.label}</span>
           {item!.items && (
             <i className="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
